@@ -1,0 +1,22 @@
+$(document).ready(function() {
+  var fibonacciArr = [];
+  var fibonacciSum;
+  var val1 = 1, val2 = 2;
+  
+  while (val2 < 4000000) {
+    fibonacciArr.push(val1 , val2);
+    val1 = val2 + val1;
+    val2 = val1 + val2;
+  }
+  var fibonacciEvenArr = fibonacciArr.filter(function (value) {
+    return value % 2 == 0;
+  });
+  fibonacciSum = fibonacciEvenArr.reduce(function (previousVal, currentVal, currentIndex, arr) {
+    return previousVal + currentVal;
+  });
+  fibonacciEvenArr = fibonacciEvenArr.join(',');
+  $(".array").html(fibonacciEvenArr);
+  $(".valueMe").html(fibonacciSum);
+
+  
+});
