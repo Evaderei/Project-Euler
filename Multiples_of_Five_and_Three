@@ -1,0 +1,18 @@
+$(document).ready(function () {
+  var arr = [];
+  var value;
+  for (var i = 1; i < 1000; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      arr.push(i);
+    }
+  }
+  value = arr.reduce(function (prevValue, currValue, currIndex, array) {
+    return prevValue + currValue;
+  });
+  $(".array").html("Arr has" + arr);
+    $(".value").html("Value is " + value);
+
+
+ // TODO
+  // Reduce Array into a giant product of values in array;
+});
